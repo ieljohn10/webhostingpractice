@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="heroContainer">
+    <div class="herolayers herolayers-left">
+      <div class="hero-header">
+        <h1>Architect and <span id="red">Design</span></h1>
+        <h3 id="subtitle">your future with us!</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <a href="#about-layer"><button id="explore-btn" href="#about-layer">EXPLORE</button></a>
+
+        
+      </div>
+    </div>
+    <div class="herolayers herolayers-right">
+        <img class="mySlides" src="./images/house1.jpg" alt="house1">
+        <img class="mySlides" src="./images/house2.jpg" alt="house1">
+        <img class="mySlides" src="./images/house3.jpg" alt="house1">
+        <img class="mySlides" src="./images/house4.jpg" alt="house1">
+
+        <button class="btn btn-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="btn btn-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+  </div>
+  <section class="about-layer" id="about-layer">
+    <div class="aboutContainer">
+      <div class="about-cards">
+        <h2>Architecture</h2>
+        <p>We address requirements and constraints with the right mix of analytical thinking, creativity and artistry — designing buildings that make a statement, conserve natural resources and enrich our experience.</p>
+      </div>
+      <div class="about-cards">
+        <h2>Interior Design</h2>
+        <p>Across every market we serve, our team designs thoughtful interior environments by engaging key stakeholders through proprietary and proven processes to enhance culture and achieve goals.</p>
+      </div>
+      <div class="about-cards">
+        <h2>Art Planning</h2>
+        <p>Our master plans provide a comprehensive look at where an organization is today and what it’s going to take to make its ideal future a reality. Our process is intensely collaborative, involving experts.</p>
+      </div>
+    </div>
+
+    <div class="image-div">
+      <div class="house2">
+        <div class="more-textContainer">
+          <h3>What We Do</h3>
+          <p>We blend our diversity of expertise with empirical and ethnographic research, immersing ourselves in our clients’ worlds to understand their needs in their context.</p>
+        <button id="btn-more">MORE</button>
+      </div>
+        
+      </div>
+      <img id="house3" src="./images/house2.jpg" alt="house2">
+    </div>
+  </section>
+ 
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 2000);
+    }
+  </script>
+</body>
+</html>
